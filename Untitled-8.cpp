@@ -1,30 +1,33 @@
 #include <iostream>
 using namespace std;
 
-void swap(int& x, int& y);
+int add(int* x1, int* x2, int a);
 
 int main()
 {
-    int num1 = 5;
-    int num2 = 10;
-    
-    cout << "変数num1の値は" << num1 << "です\n";
-    cout << "変数num2の値は" << num2 << "です\n";
-    cout << "変数num1とnum2の値を交換します\n";
+    int num1, num2, ad;
 
-    swap(num1, num2);
+    cout << "2科目分の点数を入力してください\n";
+    cin >> num1 >> num2;
 
-    cout << "変数num1の値は" << num1 << "です\n";
-    cout << "変数num2の値は" << num2 << "です\n";
+    cout << "加算する点数を入力してください\n";
+    cin >> ad;
+
+    add(&num1, &num2, ad);
+
+    cout << ad << "点加算しましたので\n";
+
+    cout << "科目1は" << num1 << "点となりました\n";
+    cout << "科目2は" << num2 << "点となりました\n";
 
     return 0;
 }
 
-void swap(int& x, int& y)
+int add(int* x1, int* x2, int a)
 {
-    int tmp;
+    *x1 += a;
+    *x2 += a;
 
-    tmp = x;
-    x = y;
-    y = tmp;
+    return 0;
+
 }
