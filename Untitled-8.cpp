@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int add(int* x1, int* x2, int a);
+void add(int& x1, int& x2, int a);
 
 int main()
 {
@@ -13,21 +13,16 @@ int main()
     cout << "加算する点数を入力してください\n";
     cin >> ad;
 
-    add(&num1, &num2, ad);
-
     cout << ad << "点加算しましたので\n";
 
-    cout << "科目1は" << num1 << "点となりました\n";
-    cout << "科目2は" << num2 << "点となりました\n";
+    add(num1, num2, ad);
 
-    return 0;
+    cout << "科目1の点数は" << num1 << "です\n";
+    cout << "科目2の点数は" << num2 << "です\n";
 }
 
-int add(int* x1, int* x2, int a)
+void add(int& x1, int& x2, int a)
 {
-    *x1 += a;
-    *x2 += a;
-
-    return 0;
-
+    x1 += a;
+    x2 += a;
 }
