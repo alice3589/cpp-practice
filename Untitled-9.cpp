@@ -10,6 +10,7 @@ int main()
     cout << "testの値は" << test << "です。\n";
     cout << "test+1の値は" << test+1 << "です。\n";
     cout << "*(test+1)の値は" << *(test+1) << "です。\n";
+    cout << "草をはやす\n"; 
 
     return 0;
 }
