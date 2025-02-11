@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-double avg(int t[]);
+double avg(int* pT);
 
 int main()
 {
@@ -17,11 +17,11 @@ int main()
     return 0;
 }
 
-double avg(int t[])
+double avg(int* pT)
 {
     double sum = 0;
     for (int i = 0; i < 5; i++){
-        sum += t[i];
+        sum += *(pT + 1);
     }
     return sum/5;
 }
