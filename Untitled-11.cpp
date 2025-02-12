@@ -1,22 +1,32 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
+
+int max(int x[]);
 
 int main()
 {
-    char str0[20];
-    char str1[10];
-    char str2[10];
+    int test[5];
 
-    strcpy(str1, "Hello");
-    strcpy(str2, "Goodbye");
-    strcpy(str0, str1);
-    strcat(str0, str2);
-
-    cout << "配列str1は" << str1 << "です。\n";
-    cout << "配列str2は" << str2 << "です。\n";
+    cout << "テストの点数を入力してください\n";
     
-    cout << "連結すると" << str0 << "です。\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> test[i];
+    }
+
+    int max1 = max(test);
+    cout << "最高点は" << max1 << "点です\n";
 
     return 0;
+}
+
+int max(int x[])
+{
+    int sum = x[0];
+    for (int i = 1; i < 5; i++) {
+        if (sum < x[i]) {
+            sum = x[i];
+        }
+    }
+
+    return sum;
 }
