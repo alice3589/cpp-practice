@@ -30,3 +30,5 @@ int max(int x[])
 
     return sum;
 }
+
+// こんばんわ
