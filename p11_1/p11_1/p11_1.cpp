@@ -1,23 +1,22 @@
 ﻿#include <iostream>
 using namespace std;
 
-enum Week { SUN, MON, TUE, WED, THU, FRI, STA };
+struct Car {
+    int num;
+    double gas;
+};
 
 int main()
 {
-    Week w;
-    w = SUN;
+    Car car1;
 
-    switch (w) {
-    case SUN: cout << "日曜日です。\n"; break;
-    case MON: cout << "月曜日です。\n"; break;
-    case TUE: cout << "火曜日です。\n"; break;
-    case WED: cout << "水曜日です。\n"; break;
-    case THU: cout << "木曜日です。\n"; break;
-    case FRI: cout << "金曜日です。\n"; break;
-    case STA: cout << "土曜日です。\n"; break;
-    default: cout << "何曜日か分かりません。\n";
-    }
+    cout << "ナンバーを入力してください。\n";
+    cin >> car1.num;
+
+    cout << "ガソリン量を入力してください。\n";
+    cin >> car1.gas;
+
+    cout << "車のナンバーは" << car1.num << ":ガソリン量は" << car1.gas << "です。\n";
 
     return 0;
 }
