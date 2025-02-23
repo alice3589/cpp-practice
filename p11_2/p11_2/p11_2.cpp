@@ -6,7 +6,7 @@ struct Car {
     double gas;
 };
 
-void show(Car c);
+void show(Car* pC);
 
 int main()
 {
@@ -18,12 +18,12 @@ int main()
     cout << "ガソリン量を入力してください。\n";
     cin >> car1.gas;
 
-    show(car1);
+    show(&car1);
 
     return 0;
 }
 
-void show(Car c)
+void show(Car* pC)
 {
-    cout << "車のナンバーは" << c.num << "ガソリン量は" << c.gas << "です。\n";
+    cout << "車のナンバーは" << pC->num << "ガソリン量は" << pC->gas << "です。\n";
 }
