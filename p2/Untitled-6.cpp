@@ -13,7 +13,7 @@ int main()
 
     cout << "動的に確保したメモリを使って" << *pA << "を出力しています。\n";
 
-    delete pA;
+    delete pA; //コメントアウト
 
     return 0;
 }
