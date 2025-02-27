@@ -31,7 +31,7 @@ void Car::setNumGas(int n, double g)
     }
 }
 
-void buy(Car c);
+void buy(Car* pC);
 
 int main()
 {
@@ -39,14 +39,14 @@ int main()
 
     car1.setNumGas(1234, 20.5);
 
-    buy(car1);
+    buy(&car1);
 
     return 0;
 }
 
-void buy(Car c)
+void buy(Car* pC)
 {
-    int n = c.getNum();
-    double g = c.getGas();
+    int n = pC->getNum();
+    double g = pC->getGas();
     cout << "ナンバー" << n << "ガソリン量" << g << "の車を購入しました。\n";
 }
