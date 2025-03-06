@@ -14,7 +14,7 @@ public:
 Car::Car()
 {
 	num = 0;
-	gas = 0;
+	gas = 0.0;
 	cout << "車を作成しました。\n";
 }
 
@@ -33,8 +33,11 @@ void Car::show()
 
 int main()
 {
-	Car car1;
-	Car car2(1234, 20.5);
+	Car mycars[3] = {
+		Car(),
+		Car(1234, 25.5),
+		Car(4567, 52.2)
+	};
 
 	return 0;
 }
