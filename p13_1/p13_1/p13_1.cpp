@@ -6,17 +6,9 @@ private:
 	int num;
 	double gas;
 public:
-	Car();
-	Car(int n, double g);
+	Car(int n = 0, double g = 0.0);
 	void show();
 };
-
-Car::Car()
-{
-	num = 0;
-	gas = 0.0;
-	cout << "車を作成しました。\n";
-}
 
 Car::Car(int n, double g)
 {
@@ -33,7 +25,8 @@ void Car::show()
 
 int main()
 {
-	Car mycars[3];
+	Car car1;
+	Car car2(1234, 20.5);
 
 	return 0;
 }
