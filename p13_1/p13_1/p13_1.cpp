@@ -6,15 +6,31 @@ private:
 	int num;
 	double gas;
 public:
-	Car(int n = 0, double g = 0.0);
+	static int sum;
+	Car();
+	void setCar(int n, double g);
 	void show();
+	static void showSum();
 };
 
-Car::Car(int n, double g)
+Car::Car()
+{
+	num = 0;
+	gas = 0.0;
+	sum++;
+	cout << "車を作成しました。\n";
+}
+
+void Car::setCar(int n, double g)
 {
 	num = n;
 	gas = g;
-	cout << "ナンバー" << num << "ガソリン量" << gas << "の車を作成しました。\n";
+	cout << "ナンバーを" << num << "ガソリン量を" << gas << "にしました。\n";
+}
+
+void Car::showSum()
+{
+	cout << "車は全部で" << sum << "台あります。\n";
 }
 
 void Car::show()
@@ -23,10 +39,21 @@ void Car::show()
 	cout << "ガソリン量は" << gas << "です。\n";
 }
 
+int Car::sum = 0;
+
 int main()
 {
+	Car::showSum();
+
 	Car car1;
-	Car car2(1234, 20.5);
+	car1.setCar(1234, 20.5);
+
+	Car::showSum();
+
+	Car car2;
+	car2.setCar(4567, 30.5);
+
+	Car::showSum();
 
 	return 0;
 }
