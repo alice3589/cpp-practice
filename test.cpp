@@ -2,14 +2,22 @@
 using namespace std;
 
 int main() {
-    string P;
-    int L;
-    cin >> P >> L;
+    int N;
+    cin >> N;
+    int D[49];
 
-    if (P.length() < L) {
-        cout << "Yes" << endl;
-    } else {
-        cout << "No" << endl;
+    for (int i = 0; i < N - 1; i++) {
+        cin >> D[i];
+    }
+
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            int dist = 0;
+            for (int k = i; k < j; k++) {
+                dist += D[k];
+            }
+            cout << dist << endl;
+        }
     }
 
     return 0;
