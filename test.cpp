@@ -2,18 +2,27 @@
 using namespace std;
 
 int main() {
-    int n, a, b;
-    int c = 0;
-    cin >> n;
+    string s, t;
+    cin >> s >> t;
 
-    for (int i = 0; i < n; i++) {
-        cin >> a >> b;
-        if (a < b) {
-            c++;
+    set<char> allowed(t.begin(), t.end());
+
+    bool a = true;
+
+    for (int i = 1; i < s.length(); i++) {
+        if (isupper(s[i])) {
+            if (allowed.find(s[i - 1]) == allowed.end()) {
+                a = false;
+                break;
+            }
         }
     }
 
-    cout << c << endl;
+    if (a == true) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
 
     return 0;
 }
