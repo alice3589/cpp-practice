@@ -2,23 +2,18 @@
 using namespace std;
 
 int main() {
-    int N;
-    cin >> N;
-    int D[49];
+    int n, a, b;
+    int c = 0;
+    cin >> n;
 
-    for (int i = 0; i < N - 1; i++) {
-        cin >> D[i];
-    }
-
-    for (int i = 0; i < N; i++) {
-        for (int j = i + 1; j < N; j++) {
-            int dist = 0;
-            for (int k = i; k < j; k++) {
-                dist += D[k];
-            }
-            cout << dist << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> a >> b;
+        if (a < b) {
+            c++;
         }
     }
+
+    cout << c << endl;
 
     return 0;
 }
